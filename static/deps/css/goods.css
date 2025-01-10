@@ -1,0 +1,21 @@
+.card-body p,
+h5{
+    color:rgb(0, 0, 0) 
+} 
+
+
+.col-lg-2>button{
+    background-color: rgb(29, 29, 141) !important;
+    margin-top: 1em;
+    
+}
+
+.card-body>p {
+    display:flex;
+    justify-content: end;   
+}
+
+.card-body a  {
+    text-decoration:none !important;
+}
+

@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit&display=swap);
+
+body{
+    font-family: Kanit, serif;
+    font-size: 16px;
+    color: white;         
+}
+
+
+.bg-dark {
+    background-color: rgb(0, 0, 0) !important ;
+} 
+
+/* Navbarda ki ana yazı ile diğer yazılar arasında ki boşluk */ 
+.nav-item>a {
+    padding-left: 2em !important;
+}
+
+.dropdown-menu {
+    margin-top: 0.30em !important; 
+    position: absolute; 
+    top: 100%; 
+    background-color: black;
+}
+
+/* dropdown yazısı renk ayarı */
+.dropdown-menu>li>a {
+    color: white ;
+}
+
+
+/*Ana Sayfa yazısı ayarı */
+.main-txt {
+    margin-left: 13em;
+    margin-top: 11em;
+    color: white;  
+}
+
+/* Tablet ve telefonlar için yazı ayarı */
+@media (max-width: 1024px) { 
+    .main-txt {
+        margin-left: 0.5em; 
+    }
+}
+
+/* Arama butonu renk ayarı */
+.btn-outline-success {
+    border-color: white;
+    color: white
+  }
+
+
+/* Sepet icon ayarı */
+.cart {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+

@@ -1,0 +1,48 @@
+/* Genel footer ayarı */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color:black;
+    padding: 10px ;
+  }
+
+/* footerın sayfalarda ayarladığımız gibi durması için */
+.page footer {
+  position: fixed;
+}
+
+.goods-page footer {
+  position:relative;
+}
+
+/* Numara ayarı */
+.contacts>p,img {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  width: 30px;
+}
+
+.phone img {
+  margin-top: 2px;
+  padding-right:2px ;
+}
+
+/* İnstagram logo Ayayrı */
+.media img {
+  width: 70px;
+}
+
+/* Adres Hizalaması */
+.adress{
+  display: flex;                  
+  align-items: center;    
+}
+
+
+.adress p {
+  margin:0em;  
+  color: white;                    
+}

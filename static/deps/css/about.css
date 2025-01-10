@@ -1,0 +1,14 @@
+.col-lg-2>p  {
+    margin-top: 1.5em;
+    border-style: solid;
+    background-color: black;
+    border-color: black;
+}
+
+/* projects.html için yazı renk ve hizalama*/
+
+h2 {
+    color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}

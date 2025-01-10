@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{%  load static  %}
+
+{% block body %}
+<body class="goods-page">
+{% endblock body %}
+
+{% block about_css %}
+<link rel="stylesheet" href="{% static "deps/css/about.css" %}">
+{% endblock about_css %}
+
+{% block footer_css %}
+  <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
+{% endblock footer_css %}
+
+
+{% block about_content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <p>Alyans Elektrik, iki lise arkadaşının ortak hayaliyle hayat bulan, yenilikçi ve güvenilir bir
+                elektrik
+                firmasıdır. Okul yıllarından beri elektrik ve teknolojiye duyduğumuz ilgi, yıllar içinde
+                uzmanlık ve
+                tecrübeyle birleşerek bizi kendi işimizi kurma noktasına getirdi. Bu süreçte, dostluğumuzu güçlü
+                bir iş
+                ortaklığına dönüştürdük ve Alyans Elektrik'i sizlere en iyi hizmeti sunmak için kurduk.
+
+                Firmamız, elektrik sektöründe modern çözümler, kaliteli ürünler ve müşteri memnuniyeti odaklı
+                hizmet
+                anlayışıyla öne çıkmaktadır. Evleriniz, iş yerleriniz ve projeleriniz için elektrik sistemleri
+                kurulumu,
+                aydınlatma çözümleri, teknik destek ve profesyonel proje tasarımı gibi birçok alanda hizmet
+                vermekteyiz.
+
+                Alyans adını, dostluk, güven ve bağlılık sembolünden ilham alarak seçtik. Bu, hem işimize hem de
+                siz değerli
+                müşterilerimize olan bağlılığımızı temsil ediyor. Hedefimiz, yalnızca bir hizmet sunmaktan öte,
+                uzun vadeli
+                güven ve memnuniyet üzerine kurulmuş bir iş birliği yaratmaktır.
+
+                Bizi tercih ettiğinizde, yalnızca işinde uzman bir ekip ile değil, aynı zamanda ihtiyaçlarınızı
+                anlayan ve
+                en iyi çözümleri sunan bir partner ile çalışmanın ayrıcalığını yaşayacaksınız.
+
+                Alyans Elektrik – Dostluktan Doğan Güç ve Güven!</p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-5">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active my-4">
+                        <img src="{% static "deps/images/dış.png" %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item my-4">
+                        <img src="{% static "deps/images/dükkan1.png" %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block footer %}
+<footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <div class="adress">
+            <img src="{% static "deps/icon/location-icon.png" %}" alt="">
+            <p> Kurtuluş, Atatürk Cd. No:8, <br>16580 Gürsu/Bursa </br> </p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="contacts">
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt="">+905340815117</p>
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt=""> +905306334403 </p>
+            <p><img src="{% static "deps/icon/mail-logo.png" %}" alt="">info@alyans_elektrik.com.tr</p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="media">
+            <a href="https://www.instagram.com/_alyans_elektrik_elektronik_/"><img src="{% static "deps/icon/instagram-logo.png" %}"
+                alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+{% endblock footer %}
+
+
+

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{%  load static  %}
+
+{% block body %}
+<body class="good-page">
+{% endblock body %}
+
+{% block about_css %}
+<link rel="stylesheet" href="{% static "/deps/css/about.css" %}">
+{% endblock about_css %}
+
+{% block footer_css %}
+  <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
+{% endblock footer_css %}
+
+{% block projects_content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">  
+        </div>
+        <div class="col-lg-6">    
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active my-4">
+                    <img src="{% static "/deps/images/cafe_aydınlatma.png" %}" class="d-block w-100" alt="..." >
+                    <h2>Cafe Adydınlatma</h2>
+                  </div>
+                  <div class="carousel-item my-4">
+                    <img src="{% static "/deps/images/duvar_aydınlatma.png" %}" class="d-block w-100" alt="...">
+                    <h2>Duvar Adydınlatma</h2>
+                  </div>
+                  <div class="carousel-item my-4">
+                    <img src="{% static "/deps/images/led_aydınlatma.png" %}" class="d-block w-100" alt="...">
+                    <h2> Tavan Led Adydınlatma</h2>
+                  </div>
+                  <div class="carousel-item my-4">
+                    <img src="{% static "/deps/images/mutfak_ısık.png" %}" class="d-block w-100" alt="...">
+                    <h2>Mutfak dolap Adydınlatma</h2>
+                  </div>
+                  <div class="carousel-item my-4">
+                    <img src="{% static "/deps/images/tavan_aydınlatma2.png" %}" class="d-block w-100" alt="...">
+                    <h2>Tavan Adydınlatma</h2>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock projects_content %}
+
+{% block footer %}
+<footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <div class="adress">
+            <img src="{% static "deps/icon/location-icon.png" %}" alt="">
+            <p> Kurtuluş, Atatürk Cd. No:8, <br>16580 Gürsu/Bursa </br> </p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="contacts">
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt="">+905340815117</p>
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt=""> +905306334403 </p>
+            <p><img src="{% static "deps/icon/mail-logo.png" %}" alt="">info@alyans_elektrik.com.tr</p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="media">
+            <a href="https://www.instagram.com/_alyans_elektrik_elektronik_/"><img src="{% static "deps/icon/instagram-logo.png" %}"
+                alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+{% endblock footer %}

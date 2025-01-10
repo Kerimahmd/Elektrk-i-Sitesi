@@ -1,0 +1,46 @@
+.card-body>a {
+    background-color: blue;
+
+
+}
+.modal-body>img {
+    display: flex;
+    justify-content:center;
+    width: 400px ;
+}
+
+.col-md-4>img {
+    width: 500px ;
+}
+
+.col-md-8>h3,
+p,a,h4{
+    color: black;
+}
+
+.col-md-8>h3,h4 {
+    margin-top: 0.5em;
+    margin-left: em;
+}
+
+.card-body>p {
+    display: flex;
+    justify-content: end;
+    
+}
+
+.border {
+    border-style: solid;
+    width: 100px;
+    margin-left: em;
+    background-color: rgb(241, 241, 245);
+    border-radius: 10%;
+}
+
+
+
+.features>ul>li {
+    color: black;
+    list-style:none;
+    
+}

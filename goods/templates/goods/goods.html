@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{%  load static  %}
+
+
+{% block body %}
+<body class="goods-page">
+{% endblock body %}
+
+{% block goods_css %}
+    <link rel="stylesheet" href="{% static "/deps/css/goods.css" %}">
+{% endblock goods_css %}
+
+{% block footer_css %}
+  <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
+{% endblock footer_css %}
+
+{% block goods_content %}
+<div class="container-fluid my-4  ">
+    <div class="row">
+      <div class="col-lg-2">
+          <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Kategoriler
+          </button>
+          <ul class="dropdown-menu bg-dark">
+            {% for category in categories %}
+              <li><a class="dropdown-item text-white" href="?kategoriler={{category}}">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        
+          <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Sırala
+          </button>
+          <ul class="dropdown-menu bg-dark">
+            <li><a class="dropdown-item text-white" href="{% url "urunler:urunler" %}">Önerilen</a></li>
+            <li><a class="dropdown-item text-white" href="{% url "urunler:urunler" %}">En Düşük Fiyat</a></li>
+            <li><a class="dropdown-item text-white" href="{% url "urunler:urunler" %}">En Yüksek Fiyat</a></li>
+          </ul>
+        </div>
+
+      <div class="col-lg-8 col-md-12">
+        <div class="row">
+          {% for product in goods  %}
+          <div class="col-lg-4 col-md-6 col-sm-6 pt-3">
+            <div class="card">
+              {% if product.image %}
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+              {% else %}
+                <img src="{% static "deps/images/Not found image.png" %}" class="card-img-top" alt="...">
+              {% endif %}
+              <div class="card-body">
+                <a href=" {% url "goods:urun_detay" product.slug %} ">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                </a>
+                <p class="card-text">{{ product.description|truncatechars:57 }} </p>
+                <a href="{% url "cart:cart_add"  %}" class="btn btn-primary add-to-cart"
+                data-product-id="{{ product.id }}">
+                {% csrf_token %}
+                Sepete Ekle</a>
+                  
+                <p>{{ product.price }}TL</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center my-4">
+                <div class="custom-shadow d-flex">
+                    <li class="page-item {% if not goods.has_previous %}disabled{% endif %}">
+                      <a class="page-link" href=" {% if goods.has_previous %}?page={{ goods.previous_page_number }}{% else %}#{% endif %} ">Önceki</a>
+                    </li>
+
+                    {% for page in goods.paginator.page_range %}
+                    {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+                      <li class="page-item {% if goods.number == page %}active{% endif %}">
+                        <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                      </li>
+                    {% endif %}
+                    {% endfor %}
+
+                    <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
+                      <a class="page-link" href="{% if goods.has_next %}?page={{ goods.next_page_number }}{% else %}#{% endif %}">Sonraki</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-12">
+      </div>
+{% endblock goods_content %}
+
+{% block footer %}
+<footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <div class="adress">
+            <img src="{% static "deps/icon/location-icon.png" %}" alt="">
+            <p> Kurtuluş, Atatürk Cd. No:8, <br>16580 Gürsu/Bursa </br> </p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="contacts">
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt="">+905340815117</p>
+            <p><img src="{% static "deps/icon/phone-logo.png" %}" alt=""> +905306334403 </p>
+            <p><img src="{% static "deps/icon/mail-logo.png" %}" alt="">info@alyans_elektrik.com.tr</p>
+          </div>
+        </div>
+    
+        <div class="col-lg-4 col-md-12">
+          <div class="media">
+            <a href="https://www.instagram.com/_alyans_elektrik_elektronik_/"><img src="{% static "deps/icon/instagram-logo.png" %}"
+                alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+{% endblock footer %}

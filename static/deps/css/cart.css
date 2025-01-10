@@ -1,0 +1,15 @@
+body,a
+p,
+h5 {
+    color: black !important;
+}
+
+.ordr {
+    margin-left: 1.5em;
+}
+
+.adress>p {
+    color: white !important;
+}
+
+
